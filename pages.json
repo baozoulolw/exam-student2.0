@@ -1,0 +1,167 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"usingComponents": {
+					"van-field": "/wxcomponents/vant/field/index",
+					"van-button": "/wxcomponents/vant/button/index"
+				}
+			}
+		},
+		{
+			"path": "pages/main/main",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"usingComponents": {
+					"van-transition": "/wxcomponents/vant/transition/index"
+				}
+			}
+
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}, {
+			"path": "components/tabbar/Tabbar",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"usingComponents": {
+					"van-tabbar": "/wxcomponents/vant/tabbar/index",
+					"van-tabbar-item": "/wxcomponents/vant/tabbar-item/index"
+				}
+			}
+
+		}, {
+			"path": "pages/Info/Info",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/main/PlanList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"usingComponents": {
+					"van-transition": "/wxcomponents/vant/transition/index"
+				}
+			}
+
+		}, {
+			"path": "pages/main/TestInterface",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/record/record",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/Info/personal/personal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        },
+		{
+		    "path" : "pages/Info/personal/password",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": true
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/record/recordInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/record/paper",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationStyle": "custom",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+			"van-icon": "/wxcomponents/vant/icon/index",
+			"van-notify": "/wxcomponents/vant/notify/index",
+			"van-toast": "/wxcomponents/vant/toast/index",
+			"van-overlay": "/wxcomponents/vant/overlay/index",
+			"van-image": "/wxcomponents/vant/image/index",
+			"van-cell": "/wxcomponents/vant/cell/index",
+			"van-cell-group": "/wxcomponents/vant/cell-group/index",
+			"van-button": "/wxcomponents/vant/button/index",
+			"van-dialog": "/wxcomponents/vant/dialog/index",
+			"van-nav-bar": "/wxcomponents/vant/nav-bar/index",
+			"van-popup": "/wxcomponents/vant/popup/index",
+			"van-count-down": "/wxcomponents/vant/count-down/index",
+			"van-collapse": "/wxcomponents/vant/collapse/index",
+			"van-collapse-item": "/wxcomponents/vant/collapse-item/index",
+			"van-radio": "/wxcomponents/vant/radio/index",
+			"van-radio-group": "/wxcomponents/vant/radio-group/index",
+			"van-checkbox": "/wxcomponents/vant/checkbox/index",
+			"van-checkbox-group": "/wxcomponents/vant/checkbox-group/index",
+			"van-tag": "/wxcomponents/vant/tag/index",
+			"van-field": "/wxcomponents/vant/field/index",
+			"van-action-sheet": "/wxcomponents/vant/action-sheet/index",
+			"van-image": "/wxcomponents/vant/image/index"
+		}
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"color": "#2c2c2c",
+		"selectedColor": "#ff7675",
+		"list": [{
+			"pagePath": "pages/main/main",
+			"iconPath": "static/icon/home.png",
+			"selectedIconPath": "static/icon/home-selected.png",
+			"text": "首页"
+		}, 
+		{
+			"pagePath": "pages/record/record",
+			"iconPath": "static/icon/record.png",
+			"selectedIconPath": "static/icon/record-selected.png",
+			"text": "考试记录"
+		},
+		{
+			"pagePath": "pages/Info/Info",
+			"iconPath": "static/icon/self.png",
+			"selectedIconPath": "static/icon/self-selected.png",
+			"text": "个人"
+		}]
+	}
+}
