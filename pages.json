@@ -108,6 +108,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/Info/personal/avatar",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -137,7 +146,8 @@
 			"van-tag": "/wxcomponents/vant/tag/index",
 			"van-field": "/wxcomponents/vant/field/index",
 			"van-action-sheet": "/wxcomponents/vant/action-sheet/index",
-			"van-image": "/wxcomponents/vant/image/index"
+			"van-image": "/wxcomponents/vant/image/index",
+			"van-uploader": "/wxcomponents/vant/uploader/index"
 		}
 	},
 	"tabBar": {

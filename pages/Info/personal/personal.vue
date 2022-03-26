@@ -8,7 +8,13 @@
 		/>
 		<view class="backgroung-color"></view>
 		<view style="height:40rpx"></view>
-		<van-cell title="头像" is-link />
+		<van-cell title="头像" is-link :url="'./avatar?url='+ showUser.avatarUrl"/>
+		<!-- <van-cell title='姓名' :value='showUser.realName' is-link @click='realnameShow'></van-cell>
+		<van-cell title='性别' :value='showUser.gender' is-link @click='realnameShow'></van-cell>
+		<van-cell title='住址' :value='showAddress' is-link @click='realnameShow'></van-cell>
+		<van-cell title='电话号码' :value='showUser.phone' is-link @click='realnameShow'></van-cell>
+		<van-cell title='电子邮箱' :value='showUser.email' is-link @click='realnameShow'> -->
+		</van-cell>
 		<van-cell is-link @click='realnameShow'>
 			<view slot="title" style="display: flex;">
 				<view class="van-cell-text" style="margin-right: 120rpx;">姓名</view>
@@ -83,7 +89,8 @@
 					phone: '',
 					address: '',
 					id: '',
-					username: ''
+					username: '',
+					avatarUrl:''
 				},
 				editUser: {},
 				genderSelect: false,
@@ -120,7 +127,8 @@
 						phone,
 						address,
 						id,
-						username
+						username,
+						avatarUrl
 					} = res.data;
 					this.showUser = {
 						avatar,
@@ -129,7 +137,8 @@
 						email,
 						phone,
 						id,
-						username
+						username,
+						avatarUrl
 					};
 					this.showAddress = this.getAdressString(JSON.parse(address));
 					this.$set(this.showUser,'address',JSON.parse(address));

@@ -8,7 +8,7 @@
 			<van-field left-icon='manager-o' :model:value="username" placeholder="请输入用户名" @change='usernameChange'/>
 		</view>
 		<view class="password">
-			<van-field left-icon='closed-eye' :model:value="password" placeholder="请输入密码" @change='passwordChange'/>
+			<van-field password left-icon='closed-eye' :model:value="password" placeholder="请输入密码" @change='passwordChange'/>
 		</view>
 		<van-button type="primary" @click="toLogin" class="btn">登录</van-button>
 	</view>
@@ -21,8 +21,8 @@
 		data() {
 			return {
 				src: study,
-				username: '',
-				password: ''
+				username: 'Baozoulolw',
+				password: 'w2380758345'
 			};
 		},
 		methods:{

@@ -3,6 +3,7 @@ import {get,post} from 'static/utils/https.js';
 import Notify from 'wxcomponents/vant/notify/notify';
 import Toast from 'wxcomponents/vant/toast/toast';
 import Dialog from 'wxcomponents/vant/dialog/dialog';
+import FormData from 'static/formdata/formData.js'
 import {router,RouterMount} from 'static/utils/router.js' 
 
 // #ifndef VUE3
@@ -14,6 +15,7 @@ Vue.prototype.$post = post;
 Vue.prototype.$toast = Toast;
 Vue.prototype.$dialog = Dialog;
 Vue.prototype.$notify = Notify;
+Vue.prototype.$fromData = () => new FormData();
 App.mpType = 'app'
 const app = new Vue({
     ...App
