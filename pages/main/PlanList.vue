@@ -12,7 +12,7 @@
 		<view style="height: 30rpx;"></view>
 		<view v-for='item in onSchedule' :key="item.id" style="margin-bottom: 30rpx;">
 		<van-cell-group inset custom-class='type-item'>
-			<van-cell :title="item.examName" icon="notes-o" is-link />
+			<van-cell :title="item.examName" icon="notes-o" is-link value="立即开始" @click='openPop(item)'/>
 			<van-cell :border="false" use-label-slot>
 				<view slot="label">
 					<view class="van-cell-text">考试时长: {{item.duration}}分钟</view>

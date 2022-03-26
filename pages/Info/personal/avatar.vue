@@ -46,7 +46,7 @@
 				if (res.status === 1000) {
 					let param = {
 						avatar: res.data,
-						id: uni.getStorageInfoSync('user').id
+						id: uni.getStorageSync('user').id
 					}
 					let res1 = await this.$post('/user/edit', param);
 					if (res1.status === 1000) {

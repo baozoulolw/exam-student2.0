@@ -23,7 +23,7 @@
 				<van-icon style='font-size: 45rpx; top:15rpx;position: relative;' name="apps-o" color="#ff7675"
 					@click='openLeftPop' />
 			</view>
-			<van-count-down :time="exam.duration * 60 " slot='title' />
+			<van-count-down :time="exam.duration * 60 *1000" auto-start class="control-count-down" slot='title' />
 		</van-nav-bar>
 		<view style="display: flex;">
 			<van-button style='margin-right: auto;' type="default" @click='jump(-1)' v-if='showQuestionIndex !== 1'>上一题
@@ -207,6 +207,8 @@
 						}).sort((v1, v2) => v1.sort - v2.sort);
 						this.questionChange();
 						this.param.examId = this.exam.id;
+						 const countDown = this.selectComponent('.control-count-down');
+						 countDown.reset();
 					});
 				}
 			},
@@ -359,9 +361,14 @@
 				confirm.then(async () => {
 						this.param.endTime = this.formattime(new Date());
 						this.param.finish = 1;
-						if (this.types.slice(-1)[0].questions.length > 0) {
+						/* if (this.types.slice(-1)[0].questions.length > 0) {
 							this.param.marking = 1;
-						}
+						} */
+						let mark = this.types.filter(i => {
+							i.value === 4
+						});
+						console.log(this.types);
+						this.param.marking = this.types[4].questions.length > 0 ? 1:0;
 						let score = this.computedScore();
 						this.param.score = 0;
 						this.param.answer = JSON.stringify(this.types);

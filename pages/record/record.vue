@@ -36,7 +36,7 @@
 					pageNumber: 1,
 					pageSize: 99999,
 					param: {
-						userId: uni.getStorageInfoSync('user').id
+						userId: uni.getStorageSync('user').id
 					}
 				};
 				let res = await this.$post('/exam/record/list', params);
