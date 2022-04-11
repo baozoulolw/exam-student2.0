@@ -370,7 +370,7 @@
 						console.log(this.types);
 						this.param.marking = this.types[4].questions.length > 0 ? 1:0;
 						let score = this.computedScore();
-						this.param.score = 0;
+						this.param.score = score;
 						this.param.answer = JSON.stringify(this.types);
 						let res = await this.$post('/exam/submit', this.param);
 						//let res = await this.$post('/exam/submit',{finish:0});
