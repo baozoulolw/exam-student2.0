@@ -23,7 +23,7 @@
 				<van-icon style='font-size: 45rpx; top:15rpx;position: relative;' name="apps-o" color="#ff7675"
 					@click='openLeftPop' />
 			</view>
-			<van-count-down :time="exam.duration * 60 *1000" auto-start class="control-count-down" slot='title' />
+			<van-count-down :time="time" auto-start class="control-count-down" slot='title' />
 		</van-nav-bar>
 		<view style="display: flex;">
 			<van-button style='margin-right: auto;' type="default" @click='jump(-1)' v-if='showQuestionIndex !== 1'>上一题
@@ -132,7 +132,8 @@
 					finish: 0,
 					answer: '',
 					marking: 0
-				}
+				},
+				time:''
 				//showQuestion:{}
 			};
 		},
@@ -207,8 +208,6 @@
 						}).sort((v1, v2) => v1.sort - v2.sort);
 						this.questionChange();
 						this.param.examId = this.exam.id;
-						 const countDown = this.selectComponent('.control-count-down');
-						 countDown.reset();
 					});
 				}
 			},
@@ -401,10 +400,32 @@
 				return YY + MM + DD + " " + hh + mm + ss;
 			}
 		},
-		onLoad(param) {
+		async onLoad(param) {
+			const toast = this.$toast.loading({
+			  duration: 0, // 持续展示 toast
+			  forbidClick: true,
+			  message: '加载中',
+			});
 			this.examId = param.examId;
-			this.joinExam();
-			this.param.beginTime = this.formattime(new Date());
+			await this.joinExam();
+			let now = new Date();
+			this.param.beginTime = this.formattime(now);
+			if(this.exam.specifyTime === 0){
+				this.time = exam.duration * 60 *1000
+			}else{
+				let d = new Date();
+				let s = this.exam.endTime;
+				d.setYear(parseInt(s.substring(0,4),10));
+				d.setMonth(parseInt(s.substring(5,7)-1,10));
+				d.setDate(parseInt(s.substring(8,10),10));
+				d.setHours(parseInt(s.substring(11,13),10));
+				d.setMinutes(parseInt(s.substring(14,16),10));
+				d.setSeconds(parseInt(s.substring(17,19),10));
+				this.time = d.getTime() - now.getTime();
+			}
+			const countDown = this.selectComponent('.control-count-down');
+			countDown.reset();
+			toast.clear();
 		},
 	}
 </script>
