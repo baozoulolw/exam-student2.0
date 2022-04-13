@@ -15,7 +15,7 @@
 		  <van-cell title="类型" :value="record.exam.specifyTime ? '不定时':'定时'" />
 		  <van-cell title="考试时长" :value="record.exam.duration+'分钟'" />
 		  <van-cell title="开始时间" :value="record.exam.beginTime" />
-		  <van-cell title="开始时间" :value="record.exam.endTime" />
+		  <van-cell title="结束时间" :value="record.exam.endTime" />
 		  <van-cell title="通过分数" :value="record.exam.passScore+'分'" />
 		</van-cell-group>
 		<view style="height: 30rpx;"></view>

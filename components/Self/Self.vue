@@ -11,14 +11,14 @@
 				</view>
 			</van-cell>
 		</van-cell-group>
-		<view style="height: 20px;"></view>
+		<!-- <view style="height: 20px;"></view>
 		<van-cell-group inset custom-class='type-item'>
 			<van-cell :border="false" use-label-slot>
 				<view slot="label" class="info-head">
 					<view>{{}}</view>
 				</view>
 			</van-cell>
-		</van-cell-group>
+		</van-cell-group> -->
 		<view style="height: 20px;"></view>
 		<van-cell-group inset>
 			<van-cell title="个人资料" icon="clock-o" is-link 
