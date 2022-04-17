@@ -323,7 +323,7 @@
 						} else if (type === 1) {
 							let parseAnswer = JSON.parse(answer);
 							if(content !== ''){
-								check = content.every(i => parseAnswer.some(a => a === i))
+								check = parseAnswer.every(i => content.some(a => a === i))
 							}
 						} else if (type === 2) {
 							check = content === Number(answer)

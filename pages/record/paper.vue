@@ -28,10 +28,10 @@
 							<text>我的作答: </text>
 							<van-tag style='margin-left: 15rpx;' plain type="success">{{item.myAnswer.content}}</van-tag>
 						</view>
-						<view style="margin-bottom: 20rpx;" v-if='item.question.type === 1'>
+						<view style="margin-bottom: 20rpx;display: flex;" v-if='item.question.type === 1'>
 							<text>我的作答: </text>
 							<view v-if="item.myAnswer.content !== ''">
-								<van-tag style='margin-left: 15rpx;' plain type="success" v-for='myItem in JSON.parse(item.myAnswer.content)' :key='myItem'>{{myItem}}</van-tag>
+								<van-tag style='margin-left: 15rpx;' plain type="success" v-for='myItem in item.myAnswer.content' :key='myItem'>{{myItem}}</van-tag>
 							</view>
 						</view>
 					</view>
@@ -54,7 +54,7 @@
 							<view style="margin-right: 30rpx;">填空{{index+1}}</view>
 							<view>
 								<view style="margin-bottom: 12rpx;">参考答案:{{reference.value}}</view>
-								<view>我的答案:{{item.myAnswer.content[index] ? item.myAnswer.content[index]:''}}</view>
+								<view>我的答案:{{item.myAnswer.content[index] ? item.myAnswer.content[index].value:''}}</view>
 							</view>
 						</view>
 					</view>
