@@ -411,7 +411,7 @@
 			let now = new Date();
 			this.param.beginTime = this.formattime(now);
 			if(this.exam.specifyTime === 0){
-				this.time = exam.duration * 60 *1000
+				this.time = this.exam.duration * 60 *1000
 			}else{
 				let d = new Date();
 				let s = this.exam.endTime;
